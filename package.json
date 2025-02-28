@@ -9,17 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^4.1.2",
     "@langchain/community": "^0.3.33",
     "@langchain/core": "^0.3.41",
     "@langchain/openai": "^0.4.4",
+    "@prisma/client": "^6.4.1",
     "@supabase/supabase-js": "^2.49.1",
     "@zilliz/milvus2-sdk-node": "^2.5.5",
     "clsx": "^2.1.1",
     "langchain": "^0.3.19",
+    "lucide-react": "^0.476.0",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.8",
+    "react-hook-form": "^7.54.2",
     "supabase": "^2.15.8",
     "tailwind-merge": "^3.0.2",
     "zod": "^3.24.2"
@@ -32,6 +36,7 @@
     "@types/react-dom": "^19.0.4",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
+    "prisma": "^6.4.1",
     "tailwindcss": "^4",
     "typescript": "^5.7.3"
   }
