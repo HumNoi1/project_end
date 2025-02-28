@@ -9,19 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@langchain/community": "^0.3.33",
+    "@langchain/core": "^0.3.41",
+    "@langchain/openai": "^0.4.4",
+    "@supabase/supabase-js": "^2.49.1",
+    "@zilliz/milvus2-sdk-node": "^2.5.5",
+    "clsx": "^2.1.1",
+    "langchain": "^0.3.19",
+    "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.0"
+    "react-dropzone": "^14.3.8",
+    "supabase": "^2.15.8",
+    "tailwind-merge": "^3.0.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/node": "^20.17.19",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5.7.3"
   }
 }
