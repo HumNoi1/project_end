@@ -3,9 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter, notFound } from 'next/navigation';
 import Layout from '@/components/ui/Layout';
-import Link from 'next/link';
-import { ArrowLeft, Send, Save, AlertTriangle, Search } from 'lucide-react';
-import { supabase } from '@/lib/supabase/client';
+import { createClient } from '@/lib/supabase/server';
 
 export default function CheckAnswerPage({ params }: { params: { id: string } }) {
   const router = useRouter();
@@ -23,6 +21,7 @@ export default function CheckAnswerPage({ params }: { params: { id: string } }) 
   
   useEffect(() => {
     async function loadData() {
+      const supabase = createClient();
       try {
         // ดึงข้อมูลคำตอบ
         const { data: answerData, error: answerError } = await supabase
@@ -108,14 +107,15 @@ export default function CheckAnswerPage({ params }: { params: { id: string } }) 
       setIsChecking(false);
     }
   };
-  
   // ฟังก์ชันบันทึกการประเมิน
   const handleSaveAssessment = async () => {
     if (!answer || !answerKey) return;
     
+    const supabase = createClient();
     try {
       // ถ้ามีการประเมินอยู่แล้ว ให้อัปเดต
       if (assessment?.assessment_id) {
+        await supabase
         await supabase
           .from('assessments')
           .update({

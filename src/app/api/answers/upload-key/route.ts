@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     
     // เก็บไฟล์ใน Supabase Storage
     const fileName = `answerkeys/${subjectId}/${file.name}`;
-    const { data: storageData, error: storageError } = await supabaseAdmin
+    const { error: storageError } = await supabaseAdmin
       .storage
       .from("files")
       .upload(fileName, file, {
@@ -68,10 +68,10 @@ export async function POST(request: NextRequest) {
       answerKeyId: answerKey.answer_key_id,
       chunksCount,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error uploading answer key:", error);
     return NextResponse.json(
-      { error: error.message || "An error occurred" },
+      { error: error instanceof Error ? error.message : "An error occurred" },
       { status: 500 }
     );
   }
